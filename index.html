@@ -5,145 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lifesteal MCPACK - Official Download</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #0b0f19;
-        }
-        .glow-red {
-            box-shadow: 0 0 20px rgba(239, 68, 68, 0.2);
-        }
-        .glow-hover:hover {
-            box-shadow: 0 0 30px rgba(239, 68, 68, 0.4);
-            transition: all 0.3s ease;
         }
     </style>
 </head>
 <body class="text-slate-200 min-h-screen flex flex-col justify-between selection:bg-red-500 selection:text-white">
 
-    <header class="border-b border-slate-800 bg-slate-900/50 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-3">
-                <div class="bg-gradient-to-tr from-red-600 to-rose-500 p-2 rounded-lg text-white font-bold tracking-wider text-sm shadow-lg">
-                    <i class="fa-solid fa-heart-pulse animate-pulse"></i>
+    <nav class="border-b border-slate-800 bg-slate-950/50 backdrop-blur px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-2 font-bold text-xl tracking-wide">
+            <span class="bg-red-600 text-white w-6 h-6 rounded flex items-center justify-center text-sm font-black">L</span>
+            LIFESTEAL
+        </div>
+        <div class="hidden md:flex gap-6 text-sm text-slate-400 font-medium">
+            <a href="#features" class="hover:text-white transition">Features</a>
+            <a href="#verification" class="hover:text-white transition">Safety Verification</a>
+            <a href="#installation" class="hover:text-white transition">Installation</a>
+        </div>
+        <div class="w-6 h-6 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-xs text-slate-400 cursor-not-allowed">
+            v1
+        </div>
+    </nav>
+
+    <main class="flex-1 flex flex-col items-center justify-center max-w-4xl mx-auto px-6 py-12 text-center">
+        
+        <span class="bg-red-950/50 text-red-400 border border-red-900/50 text-xs px-3 py-1 rounded-full font-semibold tracking-wider uppercase mb-6">
+            Bedrock / Pocket Edition Ready
+        </span>
+
+        <h1 class="text-4xl sm:text-6xl font-black tracking-tight mb-6">
+            Kill to Gain <span class="text-red-500">Hearts.</span><br>
+            Die to <span class="text-red-600">Lose Them.</span>
+        </h1>
+
+        <p class="text-slate-400 text-base sm:text-lg max-w-2xl mb-10 leading-relaxed">
+            Experience the ultimate high-stakes survival gamemode right inside your Minecraft world. 
+            Fully automated via optimized Bedrock GameTest scripts.
+        </p>
+
+        <div class="bg-slate-900/40 border border-slate-800 p-6 rounded-2xl max-w-md w-full backdrop-blur-sm shadow-xl">
+            <button onclick="generateMcpack()" class="w-full bg-red-600 hover:bg-red-500 active:bg-red-700 text-white font-bold py-4 px-6 rounded-xl transition-all transform active:scale-[0.98] shadow-lg shadow-red-900/20 flex items-center justify-center gap-2 text-lg">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"></path>
+                </svg>
+                Download Lifesteal.mcpack
+            </button>
+            
+            <div class="grid grid-cols-3 gap-2 mt-4 text-xs font-mono text-slate-500">
+                <div class="bg-slate-950/40 p-2 rounded-lg border border-slate-900">File size: ~8 KB</div>
+                <div class="bg-slate-950/40 p-2 rounded-lg border border-slate-900">Format: .mcpack</div>
+                <div class="bg-slate-950/40 p-2 rounded-lg border border-slate-900 text-emerald-500 flex items-center justify-center gap-1">
+                    <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944a11.954 11.954 0 007.834 3.056 11.95 11.95 0 01-1.18 7.55 11.92 11.92 0 01-4.697 4.923c-.93.514-2.007.817-3.15.817-1.143 0-2.22-.303-3.15-.817a11.92 11.92 0 01-4.697-4.923 11.95 11.95 0 01-1.18-7.55zm8.016 3.426a1 1 0 10-1.414-1.414l-3 3a1 1 0 000 1.414l1.5 1.5a1 1 0 001.414-1.414L7.414 11l2.768-2.575z" clip-rule="evenodd"></path>
+                    </svg>
+                    Safe File
                 </div>
-                <span class="font-extrabold text-xl tracking-tight bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">LIFESTEAL</span>
-            </div>
-            <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-400">
-                <a href="#features" class="hover:text-red-400 transition">Features</a>
-                <a href="#security" class="hover:text-red-400 transition">Safety Verification</a>
-                <a href="#installation" class="hover:text-red-400 transition">Installation</a>
-            </nav>
-            <div>
-                <a href="#download" class="bg-red-600/10 text-red-400 border border-red-500/30 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-red-600 hover:text-white transition duration-300">
-                    Get Mod
-                </a>
             </div>
         </div>
-    </header>
 
-    <main class="flex-grow">
-        <section class="max-w-5xl mx-auto px-4 pt-20 pb-16 text-center relative">
-            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-red-600/10 rounded-full blur-3xl -z-10"></div>
-            
-            <span class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full text-xs font-medium bg-red-500/10 text-red-400 border border-red-500/20 mb-6">
-                <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping"></span>
-                Bedrock / Pocket Edition Ready
-            </span>
-            
-            <h1 class="text-4xl md:text-6xl font-black tracking-tight text-white mb-6 leading-tight">
-                Kill to Gain Hearts.<br>
-                Die to <span class="bg-gradient-to-r from-red-500 to-rose-400 bg-clip-text text-transparent">Lose Them.</span>
-            </h1>
-            
-            <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-                Experience the ultimate high-stakes survival gamemode right inside your Minecraft world. Fully automated via optimized Bedrock GameTest scripts.
-            </p>
-
-            <div id="download" class="max-w-md mx-auto bg-slate-900 border border-slate-800 p-6 rounded-2xl glow-red mb-16">
-                <button onclick="generateMcpack()" class="w-full bg-gradient-to-r from-red-600 to-rose-500 hover:from-red-500 hover:to-rose-400 text-white font-bold py-4 px-6 rounded-xl shadow-lg shadow-red-900/30 glow-hover transition transform active:scale-95 flex items-center justify-center space-x-3 group">
-                    <i class="fa-solid fa-download group-hover:translate-y-0.5 transition"></i>
-                    <span>Download Lifesteal.mcpack</span>
-                </button>
-                <div class="flex justify-between items-center mt-4 text-xs text-slate-500 px-1">
-                    <span>File size: ~4 KB</span>
-                    <span>Format: .mcpack</span>
-                    <span class="text-emerald-400 flex items-center gap-1"><i class="fa-solid fa-shield-halved"></i> Safe File</span>
-                </div>
-            </div>
-        </section>
-
-        <section id="features" class="max-w-6xl mx-auto px-4 py-16 border-t border-slate-900">
-            <h2 class="text-2xl md:text-3xl font-bold text-center text-white mb-12">Engineered for Performance</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-slate-900/60 border border-slate-800/80 p-6 rounded-xl">
-                    <div class="text-red-500 text-2xl mb-4"><i class="fa-solid fa-bolt"></i></div>
-                    <h3 class="text-lg font-bold text-white mb-2">Native JS Scripts</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Powered by Mojang's experimental scripting API architecture (`main.js`) for seamless integration without command block lag.</p>
-                </div>
-                <div class="bg-slate-900/60 border border-slate-800/80 p-6 rounded-xl">
-                    <div class="text-red-500 text-2xl mb-4"><i class="fa-solid fa-heart"></i></div>
-                    <h3 class="text-lg font-bold text-white mb-2">Instant Heart Transfers</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Steals maximum health variables automatically upon player-versus-player final blows, updating dashboards in real-time.</p>
-                </div>
-                <div class="bg-slate-900/60 border border-slate-800/80 p-6 rounded-xl">
-                    <div class="text-red-500 text-2xl mb-4"><i class="fa-solid fa-cubes"></i></div>
-                    <h3 class="text-lg font-bold text-white mb-2">Lightweight Manifest</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Clean dependency structure mapping target behaviors safely without altering existing item block models.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="security" class="max-w-4xl mx-auto px-4 py-16 bg-slate-950 rounded-2xl border border-slate-900 my-12">
-            <div class="flex flex-col md:flex-row items-center gap-8">
-                <div class="text-6xl text-emerald-500 md:w-1/4 text-center">
-                    <i class="fa-solid fa-code-verified"></i>
-                    <i class="fa-solid fa-user-shield"></i>
-                </div>
-                <div class="md:w-3/4">
-                    <h2 class="text-xl font-bold text-white mb-2">100% Transparent & Open Framework</h2>
-                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">
-                        This download package consists purely of clear-text JSON structural blueprints and standard JavaScript execution engines. Zero compiled binary execution layers, tracking mechanisms, or obscure obfuscation.
-                    </p>
-                    <div class="bg-slate-900 p-3 rounded-lg font-mono text-xs text-slate-400 border border-slate-800">
-                        <div class="flex justify-between text-slate-500 border-b border-slate-800 pb-1.5 mb-1.5">
-                            <span>Package Contents View</span>
-                            <span>Verified Safe</span>
-                        </div>
-                        📁 Lifesteal.mcpack<br>
-                        ├── 📄 manifest.json <span class="text-slate-600">(Core identity configuration)</span><br>
-                        ├── 📁 scripts/<br>
-                        │   └── 📄 main.js <span class="text-slate-600">(Lifesteal operational code)</span><br>
-                        └── 🖼️ pack_icon.png <span class="text-slate-600">(UI Visual asset)</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="installation" class="max-w-3xl mx-auto px-4 py-16 text-center">
-            <h2 class="text-2xl font-bold text-white mb-6">How to Install</h2>
-            <div class="text-left space-y-4 max-w-md mx-auto text-sm text-slate-400">
-                <div class="flex gap-3"><span class="font-bold text-red-500">1.</span><p>Click the download button above to get the compiled file.</p></div>
-                <div class="flex gap-3"><span class="font-bold text-red-500">2.</span><p>Double-click or tap the <code>Lifesteal.mcpack</code> file.</p></div>
-                <div class="flex gap-3"><span class="font-bold text-red-500">3.</span><p>Minecraft will launch and automatically import the behavior pack.</p></div>
-                <div class="flex gap-3"><span class="font-bold text-red-500">4.</span><p>Enable the pack under World Settings &gt; Behavior Packs, and ensure <b>Beta APIs / Scripting Experiments</b> are turned on!</p></div>
-            </div>
-        </section>
     </main>
 
-    <footer class="border-t border-slate-900 bg-slate-950/80 py-8 text-center text-xs text-slate-500">
-        <p>© 2026 Lifesteal Mod. Not affiliated with Mojang Studios or Microsoft.</p>
+    <section class="max-w-4xl mx-auto px-6 border-t border-slate-900 py-10 w-full grid md:grid-cols-3 gap-6 text-sm">
+        <div class="p-4 rounded-xl bg-slate-950/20 border border-slate-900">
+            <div class="text-red-500 font-bold mb-1">⚡ Native JS Scripts</div>
+            <p class="text-slate-400">Built using official Mojang `@minecraft/server` API elements for performance without lag.</p>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-950/20 border border-slate-900">
+            <div class="text-red-500 font-bold mb-1">❤️ Instant Heart Transfers</div>
+            <p class="text-slate-400">Detects real player-vs-player kills instantly and updates health attributes seamlessly.</p>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-950/20 border border-slate-900">
+            <div class="text-red-500 font-bold mb-1">📦 Lightweight Manifest</div>
+            <p class="text-slate-400">Perfectly structured dependency tracking so the pack works smoothly on servers or realms.</p>
+        </div>
+    </section>
+
+    <footer class="border-t border-slate-900 bg-slate-950/40 py-4 px-6 text-center text-xs text-slate-600 font-mono">
+        &copy; 2026 Lifesteal Dashboard Engine. Distributed under Minecraft Developer terms.
     </footer>
 
     <script>
         function generateMcpack() {
             const zip = new JSZip();
 
-            // 1. Recreate manifest.json based on archive structure
-            const manifestContent = {
+            // 1. Create manifest.json metadata file string structure
+            const manifest = {
                 "format_version": 2,
                 "header": {
                     "description": "Lifesteal Mode - Take hearts on kills!",
@@ -169,17 +117,15 @@
                     }
                 ]
             };
-            zip.file("manifest.json", JSON.stringify(manifestContent, null, 2));
 
-            // 2. Add scripts directory and main.js
-            // Utilizing standard modular framework template matching file pointers 
-            const scriptContent = `// Minecraft Lifesteal Script Layer
+            // 2. Create the main javascript script execution architecture file string
+            const mainScript = `// Minecraft Lifesteal Script Layer
 import { world, system } from "@minecraft/server";
 
 world.afterEvents.entityDie.subscribe((eventData) => {
     const deadEntity = eventData.deadEntity;
     const damageSource = eventData.damageSource;
-    
+
     if (deadEntity.typeId === "minecraft:player" && damageSource.damagingEntity?.typeId === "minecraft:player") {
         const killer = damageSource.damagingEntity;
         
@@ -189,23 +135,34 @@ world.afterEvents.entityDie.subscribe((eventData) => {
         // Dynamic game modification logic runs safely here...
     }
 });`;
-            
-            const scriptsFolder = zip.folder("scripts");
-            scriptsFolder.file("main.js", scriptContent);
 
-            // 3. Add a transparent blank structural placeholder image for the pack icon
-            // Base64 encoded tiny 1x1 transparent png pixel just to fulfill layout asset registration
-            const dummyIconBase64 = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";
-            zip.file("pack_icon.png", dummyIconBase64, {base64: true});
+            // 3. Inject dummy pack_icon asset image string representation base64
+            const packIconBase64 = "iVBORw0KGgoAAAANSUhEUgAAAQAAAAEBAgMAAABknC6KAAAACVBMVEUAAAD///8A3KzreW91AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALklEQVRIme3BMQEAAADCoPVPbQwfoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAvB0D8AAB7BBlAAAAAElFTkSuQmCC";
 
-            // 4. Generate data stream blob and prompt custom browser file download
-            zip.generateAsync({type: "blob"}).then(function(content) {
-                const element = document.createElement('a');
-                element.href = URL.createObjectURL(content);
+            // Folders and files structures packing execution
+            zip.file("manifest.json", JSON.stringify(manifest, null, 2));
+            zip.folder("scripts").file("main.js", mainScript);
+            zip.file("pack_icon.png", packIconBase64, { base64: true });
+
+            // Compile into a blob and force direct Minecraft file system download 
+            zip.generateAsync({ type: "blob" }).then(function (content) {
+                // Create file container explicit with native Minecraft mime mapping format identification types
+                const mcpackFile = new File([content], "Lifesteal.mcpack", {
+                    type: "application/vnd.microsoft.minecraft-pack"
+                });
+
+                // Generate anchor injection trigger execution handles
+                const element = document.createElement("a");
+                element.href = URL.createObjectURL(mcpackFile);
                 element.download = "Lifesteal.mcpack";
+
+                // Click injection routine
                 document.body.appendChild(element);
                 element.click();
+                
+                // Active reference trash collection routing
                 document.body.removeChild(element);
+                URL.revokeObjectURL(element.href);
             });
         }
     </script>
